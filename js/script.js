@@ -1,3 +1,4 @@
+
 function fitHeroRows() {
 
   const rows = document.querySelectorAll('.hero-row');
@@ -21,9 +22,37 @@ function fitHeroRows() {
 
     }
 
+
   });
 
 }
 
-window.addEventListener('load', fitHeroRows);
+
+function animateHero() {
+
+  const heroLinks = Array.from(document.querySelectorAll('.hero a'));
+
+  // Mezclar aleatoriamente
+  heroLinks.sort(() => Math.random() - 0.5);
+
+  heroLinks.forEach((link, index) => {
+
+    setTimeout(() => {
+
+      link.classList.add('show');
+
+    }, index * 20);
+
+  });
+}
+
+
+
+fitHeroRows();
+animateHero();
+
+
+
 window.addEventListener('resize', fitHeroRows);
+
+
