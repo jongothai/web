@@ -46,10 +46,10 @@ function fitHeroRows() {
 //   });
 // }
 
-function animateHero() {
+function animateHero(nombre) {
 
   const heroLinks = Array.from(
-    document.querySelectorAll('.hero a')
+    document.querySelectorAll(`#${nombre} a`)
   );
 
   heroLinks.sort(() => Math.random() - 0.5);
@@ -58,7 +58,8 @@ function animateHero() {
 
   let frameCount = 0;
 
-  const framesBetweenWords = 3;
+  // SPEED FOR THE TITLE WORDS APPEARING
+  const framesBetweenWords = 10;
 
   function revealNext() {
 
@@ -93,7 +94,10 @@ function animateHero() {
 
 
 fitHeroRows();
-animateHero();
+animateHero('hero-principal');
+animateHero('hero-principal-small');
+animateHero('hero-last');
+animateHero('hero-last-small');  
 
 
 
