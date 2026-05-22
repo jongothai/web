@@ -91,14 +91,16 @@ function animateHero(nombre) {
 }
 
 
+document.fonts.ready.then(() => {
 
+  fitHeroRows();
 
-fitHeroRows();
-animateHero('hero-principal');
-animateHero('hero-principal-small');
-animateHero('hero-last');
-animateHero('hero-last-small');  
+  animateHero('hero-principal');
+  animateHero('hero-principal-small');
+  animateHero('hero-last');
+  animateHero('hero-last-small');  
 
+});
 
 
 window.addEventListener('resize', fitHeroRows);
